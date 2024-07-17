@@ -1,0 +1,259 @@
+<!--author: W3layouts
+author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+{% extends 'project_team/project_team_index.html' %}
+{% load static %}
+{% block content %}
+
+
+<head>
+
+<title>Sports Camp Registration Form Flat Responsive widget Template :: w3layouts</title>
+<!-- metatags-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Sports Camp Registration Form a Flat Responsive Widget,Login form widgets, Sign up Web 	forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Meta tag Keywords -->
+<!-- css files -->
+<link rel="stylesheet" href="{% static 'project_team/project_report/css/jquery-ui.css' %}"/>
+<link href="{% static 'project_team/project_report/css/style.css' %}" rel="stylesheet" type="text/css" media="all"/><!--stylesheet-css-->
+<link href="//fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i" rel="stylesheet">
+
+<!-- //css files -->
+</head>
+<body>
+<script>
+{% for msg in messages %}
+
+	 alert('{{ msg }}');
+{% endfor %}
+
+</script>
+
+<div class="w3l-main">
+	<div class="w3l-from">
+		<form action="/project_upload_team_report/" method="post">
+			{% csrf_token %}
+			<div class="w3l-user">
+				<label class="head">PROJECT TEAM  HEAD<span class="w3l-star"> * </span></label>
+				<input type="text" name="project_team_head" placeholder="" autocomplete="off">
+			</div>
+			<div class="w3l-mail">
+				<label class="head">PROJECT TEAM EMAIL<span class="w3l-star"> * </span></label>
+				<input type="email" name="project_team_email" placeholder="" autocomplete="off">
+<!--			</div>-->
+<!--			<div class="clear"></div>-->
+<!--			<div class="w3l-details1">-->
+<!--				<div class="w3l-num">-->
+<!--					<label class="head">Phone Number<span class="w3l-star"> * </span></label>-->
+<!--					<input type="text"  name="phone number" placeholder="" required="">-->
+<!--				</div>-->
+<!--				<div class="w3l-date">-->
+<!--					<label class="head">Birth Date<span class="w3l-star"> * </span></label>-->
+<!--						<div class="styled-input">-->
+<!--							<input class="date" id="datepicker" name="Text" type="text" value="MM/DD/YYYY" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'MM/DD/YYYY';}" required="">-->
+<!--						</div>-->
+<!--					</div>	-->
+			<div class="clear"></div>
+			<div class="gender">
+				<label class="head">TEAM<span class="w3l-star"> * </span></label>
+					<select class="form-control" autocomplete="off" name="android">
+						<option>DEVELOPERS</option>
+						<option>ANDROID</option>
+						<option>FRONT END</option>
+						<option>BACKEND END</option>
+						<option>TESTING</option>
+						<option>OTHERS</option>
+					</select>
+			</div>
+			<div class="w3l-options2">
+			<label class="head">MEMBERS<span class="w3l-star"> * </span></label>
+				<select class="category2" autocomplete="off" name="total_team_members1">
+						<option value="">TOTAL TEAM MEMBERS</option>
+						<option value="0-1">0-1</option>
+						<option value="1-5">1-5</option>
+						<option value="5-10">5-10</option>
+						<option value="10-20">10-20</option>
+						<option value="more than 20">more than 20</option>
+					</select>
+			</div>
+				<div class="clear"></div>
+			<div class="gender">
+				<label class="head"><span class="w3l-star"> * </span></label>
+					<select class="form-control" autocomplete="off" name="frontend">
+						<option>DEVELOPERS</option>
+						<option>ANDROID</option>
+						<option>FRONT END</option>
+						<option>BACKEND END</option>
+						<option>TESTING</option>
+						<option>OTHERS</option>
+					</select>
+			<div class="clear"></div>
+			</div>
+			<div class="w3l-options2">
+			<label class="head"><span class="w3l-star"> * </span></label>
+				<select class="category2" autocomplete="off" name="total_team_members2" >
+						<option>TOTAL TEAM MEMBERS</option>
+						<option>0-1</option>
+						<option>1-5</option>
+						<option>5-10</option>
+						<option>10-20</option>
+						<option>MORE THAN 20</option>
+<!--						<option>OTHERS</option>-->
+					</select>
+			</div>
+				<div class="clear"></div>
+			<div class="gender">
+				<label class="head"><span class="w3l-star"> * </span></label>
+					<select class="form-control" autocomplete="off" name="backend">
+						<option>DEVELOPERS</option>
+						<option>ANDROID</option>
+						<option>FRONT END</option>
+						<option>BACKEND END</option>
+						<option>TESTING</option>
+						<option>OTHERS</option>
+					</select>
+			</div>
+			<div class="w3l-options2">
+			<label class="head"><span class="w3l-star"> * </span></label>
+				<select class="category2" autocomplete="off" name="total_team_members3">
+						<option>TOTAL TEAM MEMBERS</option>
+						<option>0-1</option>
+						<option>1-5</option>
+						<option>5-10</option>
+						<option>10-20</option>
+						<option>MORE THAN 20</option>
+<!--						<option>OTHERS</option>-->
+					</select>
+			</div>
+				<div class="clear"></div>
+			<div class="gender">
+				<label class="head"><span class="w3l-star"> * </span></label>
+					<select class="form-control" required="" name="testing">
+						<option value="DEVELOPERS">DEVELOPERS</option>
+						<option value="DEVELOPERS">ANDROID</option>
+						<option value="DEVELOPERS">FRONT END</option>
+						<option value="DEVELOPERS">BACKEND END</option>
+						<option>TESTING</option>
+						<option>OTHERS</option>
+					</select>
+			<div class="clear"></div>
+			</div>
+			<div class="w3l-options2">
+			<label class="head"><span class="w3l-star"> * </span></label>
+				<select class="category2" required="" name="total_team_members4">
+						<option>TOTAL TEAM MEMBERS</option>
+						<option>0-1</option>
+						<option>1-5</option>
+						<option>5-10</option>
+						<option>10-20</option>
+						<option>more than 20</option>
+				</select>
+			</div>
+			<div class="clear"></div>
+			<div class="gender">
+				<label class="head"><span class="w3l-star"> * </span></label>
+					<select class="form-control" required="" name="others">
+						<option>DEVELOPERS</option>
+						<option>ANDROID</option>
+						<option>FRONT END</option>
+						<option>BACKEND END</option>
+						<option>TESTING</option>
+						<option>OTHERS</option>
+					</select>
+			</div>
+
+			<div class="w3l-options2">
+			<label class="head"><span class="w3l-star"> * </span></label>
+				<select class="category2" required="" name="total_team_members5">
+						<option>TOTAL TEAM MEMBERS</option>
+						<option>0-1</option>
+						<option>1-5</option>
+						<option>5-10</option>
+						<option>10-20</option>
+						<option>more than 20</option>
+					</select>
+			</div>
+
+			<div class="w3l-user">
+				<label class="head">PROJECT ENQUIRY<span class="w3l-star"> * </span></label>
+				<input type="text" name="project_enquiry" placeholder="" autocomplete="off">
+			</div>
+<!--			<div class="w3l-num">-->
+<!--					<label class="head">City<span class="w3l-star"> * </span></label>-->
+<!--					<input type="text"  name="City" placeholder="" required="">-->
+<!--				</div>-->
+<!--			<div class="w3l-sym">-->
+<!--					<label class="head">State<span class="w3l-star"> * </span></label>-->
+<!--					<input type="text" name="State" placeholder="" required="">-->
+<!--			</div>-->
+<!--			<div class="clear"></div>-->
+<!--			<div class="w3l-num">-->
+<!--					<label class="head">Postal / Zip Code<span class="w3l-star"> * </span></label>-->
+<!--					<input type="text"  name="Postal / Zip Code" placeholder="" required="">-->
+<!--				</div>-->
+<!--			<div class="w3l-options2">-->
+<!--			<label class="head">Country<span class="w3l-star"> * </span></label>-->
+<!--				<select class="category2" required="">-->
+<!--						<option value=""></option>-->
+<!--						<option value="">Country-1</option>-->
+<!--						<option value="">Country-2</option>-->
+<!--						<option value="">Country-3</option>-->
+<!--						<option value="">Country-4</option>-->
+
+<!--					</select>-->
+<!--			</div>-->
+<!--			<div class="clear"></div>-->
+<!--			<div class="w3l-lef1">-->
+<!--				<h3>Parent/Guardian Information</h3>-->
+<!--			<div class="w3l-user">-->
+<!--				<label class="head">Name<span class="w3l-star"> * </span></label>-->
+<!--				<input type="text" name="Username" placeholder="" required="">-->
+<!--			</div>-->
+
+<!--				<div class="w3l-num">-->
+<!--					<label class="head">Home Number<span class="w3l-star"> * </span></label>-->
+<!--					<input type="text"  name="Home Number" placeholder="" required="">-->
+<!--				</div>-->
+<!--			<div class="w3l-sym">-->
+<!--					<label class="head">Emergency Number<span class="w3l-star"> * </span></label>-->
+<!--					<input type="text" name="Emergency Number" placeholder="" required="">-->
+<!--			</div>-->
+<!--			<div class="clear"></div>-->
+<!--			</div>-->
+<!--			<div class="w3l-rem">-->
+<!--				<div class="w3l-right">-->
+<!--					<label class="w3l-set2">Relationship</label>-->
+<!--					<textarea></textarea>-->
+<!--				</div>-->
+				<div >
+					<input  type="submit" name="submit" value="Submit"/>
+				</div>
+			</div>
+
+<!--			<div class="clear"></div>-->
+		</form>
+<!--	</div>-->
+<!--</div>-->
+<!--	<footer>&copy; 2018 Sports Camp Registration Form. All Rights Reserved | Design by <a href="http://w3layouts.com/"> W3layouts</a>-->
+<!--	</footer>-->
+<!--	&lt;!&ndash; Default-JavaScript &ndash;&gt; <script type="text/javascript" src="{% static 'project_team/project_report/js/jquery-2.1.4.min.js' %}"></script>-->
+
+<!--&lt;!&ndash; Calendar &ndash;&gt;-->
+<!--<script src="{% static 'project_team/project_report/js/jquery-ui.js' %}"></script>-->
+<!--	<script>-->
+<!--		$(function() {-->
+<!--		$( "#datepicker,#datepicker1" ).datepicker();-->
+<!--		});-->
+<!--	</script>-->
+<!--&lt;!&ndash; //Calendar &ndash;&gt;-->
+{% endblock %}
+</body>
+</html>

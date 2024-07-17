@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% extends 'manager/manager_index.html' %}
+<body>
+<script>
+{% for msg in messages %}
+
+	 alert('{{ msg }}');
+{% endfor %}
+
+</script>
+
+{% load static %}
+{% block content %}
+<style>
+table, th, td {
+  border:2px solid BLACK;
+
+  font-color:black;
+}
+
+th{
+ background-color:#5f9ea0;
+ color:white;
+
+}
+td{
+color:white;
+}
+
+h1{color:blue}
+</style>
+
+
+
+
+<div style="margin-left:0px" class="slider-info text-center">
+<center><form  enctype="multipart/form-data">
+
+            {% if datas %}
+<h1 style="font-size:40px; color:white; ">TECHNICAL TEAM DETAILS</h1><br>
+    <table style="width:90%">
+  <tr>
+    <th>ID</th>
+    <th>TECHNICAL HEAD NAME</th>
+    <th>TECHNICAL TEAM EMAIL</th>
+      <th>NO.OF PROJECTS COMPLETED</th>
+      <th>CURRENT PROJECT DETAILS</th>
+      <th>NO OF WORKERS</th>
+      <th>EXPERIENCED</th>
+      <th>FRESHER</th>
+      <th>ACTION</th>
+
+
+
+  </tr>
+
+        {% else %}
+<!--        <div><h3 style="color:white">All user are approved by admin</h3></div>-->
+        {% endif %}
+         {% for data in datas %}
+<tr style="background-color:#00204a;color:white;text-align: center;">
+         <td>{{data.id}}</td>
+            <td >{{data.technicalteam_head_name}}</td>
+            <td >{{data.technicalteam_email}}</td>
+            <td >{{data.no_of_project_completed}}</td>
+            <td> {{data.current_project_details}}</td>
+            <td> {{data.no_of_workers}}</td>
+            <td> {{data.experienced}}  </td>
+            <td> {{data.freshers}}</td>
+            <td><a href="/technical_view/{{data.id}}"><input type="button" value="view"></a></td>
+
+
+</tr>
+
+
+
+
+
+<!--<a href="/approve_merchant/{{data.id}}"><input type="button" value="approve"></a>-->
+<!--    <td>{{data.password}}</td>-->
+<!--    <td>{{data.document}}</td>-->
+<!--    <td>{{data.image}}</td>-->
+<!--    {% if data.document %}-->
+<!--    <td><a href="{{data.document.url}}"><button>File</button></a></td>-->
+<!--    {% else %}-->
+<!--      <td>-</td>-->
+<!--    {% endif %}-->
+<!--&lt;!&ndash;    <td><img src="{{i.image.url}}" alt="{{i.image}}" width="80" height="100"></td>&ndash;&gt;-->
+<!--    {% if data.image %}-->
+<!--    <td><img src="{{data.image.url}}" alt="{{data.image}}" width="80" height="100"></td>-->
+<!--    {% else %}-->
+<!--      <td>-</td>-->
+<!--    {% endif %}-->
+<!--&lt;!&ndash;    <td><a href="/update/{{data.id}}"><input type="button" value="pending"></a></td>&ndash;&gt;-->
+<!--    <td><a href="/approve/{{data.id}}"><input type="button" value="approve"></a></td>-->
+<!--      </tr>-->
+      {% endfor %}
+</table>
+<!--<p>-->
+
+<!--    {% csrf_token %}-->
+<!--    {% for data in full_data %}-->
+<!--        {{data.id}}-->
+<!--        {{data.username}}-->
+<!--        {{data.mail}}-->
+<!--        {{data.password}}-->
+<!--        {{data.document}}-->
+<!--        {{data.image}}-->
+<!--    {% endfor %}-->
+
+<!--</p>-->
+</form></center>
+</div>
+{% endblock %}
+</body>
+</html>

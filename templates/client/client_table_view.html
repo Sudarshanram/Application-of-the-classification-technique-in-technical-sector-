@@ -1,0 +1,101 @@
+{% extends 'client/client_home.html' %}
+{% load static %}
+{% block content %}
+<style>
+table, th, td {
+  border:2px solid BLACK;
+
+  font-color:black;
+}
+
+th{
+ background-color:#5f9ea0;
+ color:white;
+
+}
+td{
+color:white;
+}
+
+h1{color:blue}
+</style>
+
+<!--</head>-->
+<!-- //Head -->
+<!-- Body -->
+
+<script>
+{% for msg in messages %}
+
+	 alert('{{ msg }}');
+{% endfor %}
+
+</script>
+
+
+
+
+{% if datas %}
+ <div style="margin-left:100px" >
+	 <br><br><br><br>
+  <div class="container" style="margin-top:5px"><br><br>
+        <center>
+            <h1 style="color:white;margin-left:-200px;">FROM ORGANASATION</h1></center>
+        <br><br>
+
+
+        <table class="table" style="margin-left:-180px;">
+            <thead style="font-family:verdana; background-color:black; text-align: center;margin-left:-120px;">
+
+
+            <tr>
+
+
+	  <tr>
+<!--		  <th>ID</th>-->
+		  <th style="color:black;">CLIENT_NAME</th>
+		  <th style="color:black;">CLIENT_ORGANISATION_NAME</th>
+		  <th style="color:black;">PROJECT_STATUS</th>
+		  <th style="color:black;">PROJECT_COMPLETION_DATE</th>
+		  <th style="color:black;">PAYMENT_DETAILS</th>
+		  <th style="color:black;">ORGANISATION_EMAIL</th>
+<!--		  <th>DOWNLOAD</th>-->
+		  <th style="color:black;">ACTIONS</th>
+
+
+
+<!--        													<div><h3 style="color:white">All user are approved by admin</h3></div>-->
+
+
+			     </tr>
+            </thead>
+            <tbody>
+							{% for data in datas %}
+		  <tr style="background-color:#00204a;color:white;text-align: center;">
+
+<!--				<td>{{data.id}}</td>-->
+				<td>{{data.clientname}}</td>
+				<td>{{data.client_organisation_name}}</td>
+				<td>{{data.projectstatus}}</td>
+				<td> {{data.project_completion}}</td>
+				<td><a href="{{data.payment_details.url}}" download>{{data.payment_details}}</a></td>
+			  	<td>{{data.organisation_email}}</td>
+
+				<td><center><a href="/client_payment/"><input style="background-color:black; color:white;" type="button" value="PAYMENT"></a></center></td>
+			</tr>
+			{% endfor %}
+
+		   	 </table>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+{% else %}
+{% endif %}
+{% endblock %}
+
+
+<!-- //Body -->
+

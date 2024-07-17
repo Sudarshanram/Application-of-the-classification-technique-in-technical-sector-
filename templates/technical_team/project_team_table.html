@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'technical_team/technical_team_home.html' %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+{% for msg in messages %}
+
+	 alert('{{ msg }}');
+{% endfor %}
+
+</script>
+
+{% load static %}
+{% block content %}
+<style>
+table, th, td {
+  border:2px solid BLACK;
+
+  font-color:black;
+}
+
+th{
+ background-color:#5f9ea0;
+ color:BLACK;
+
+}
+td{
+color:white;
+}
+
+h1{color:blue}
+</style>
+
+
+
+<div style="margin-left:0px" class="slider-info text-center">
+<center><form  enctype="multipart/form-data">
+
+
+    <centre>
+        <br><br><br><br><br>
+        <h1 style="font-size:40px; color:white;">PROJECT TEAM</h1></centre>
+
+        <br><br><br><br><br>
+    <table style="width:80%; margin-left:-90px; font-size:13px;">
+                <thead>
+  <tr>
+
+    <th> PROJECT_TEAM_NAME </th>
+    <th>CHANGE_IN_PROJECT_SCOPE</th>
+      <th>COMMUNICATION_BREAKDOWN</th>
+      <th>INADEQUATE</th>
+      <th>PLANNING</th>
+      <th>TEAM_MEMBER_PROCASTINATION</th>
+      <th>CLIENT_CHANGES_IN_PROJECT</th>
+      <th> EXTERNAL_CHANGES </th>
+      <th> ACTIONS </th>
+
+
+
+
+            </tr>
+            </thead>
+            <tbody>
+
+
+         {% for data in datas %}
+        <tr style="background-color:#00204a;color:white;text-align: center;">
+
+
+            <td >{{data.PROJECT_TEAM_NAME}}</td>
+            <td >{{data.CHANGE_IN_PROJECT_SCOPE}}</td>
+            <td >{{data.COMMUNICATION_BREAKDOWN}}</td>
+            <td> {{data.INADEQUATE}}</td>
+            <td> {{data.PLANNING}}</td>
+            <td> {{data.TEAM_MEMBER_PROCASTINATION}}</td>
+            <td> {{data.CLIENT_CHANGES_IN_PROJECT}}</td>
+            <td> {{data.EXTERNAL_CHANGES}}</td>
+            <td><a href="/get_input/{{data.id}}/"><input type="button" value="analyze"></a></td>
+
+
+
+
+
+</tr>
+            {% endfor %}
+            </tbody>
+        </table>
+</form>
+
+
+</div>
+
+
+{% endblock %}
+
+
+
+
+<!--<a href="/approve_merchant/{{data.id}}"><input type="button" value="approve"></a>-->
+<!--    <td>{{data.password}}</td>-->
+<!--    <td>{{data.document}}</td>-->
+<!--    <td>{{data.image}}</td>-->
+<!--    {% if data.document %}-->
+<!--    <td><a href="{{data.document.url}}"><button>File</button></a></td>-->
+<!--    {% else %}-->
+<!--      <td>-</td>-->
+<!--    {% endif %}-->
+<!--&lt;!&ndash;    <td><img src="{{i.image.url}}" alt="{{i.image}}" width="80" height="100"></td>&ndash;&gt;-->
+<!--    {% if data.image %}-->
+<!--    <td><img src="{{data.image.url}}" alt="{{data.image}}" width="80" height="100"></td>-->
+<!--    {% else %}-->
+<!--      <td>-</td>-->
+<!--    {% endif %}-->
+<!--&lt;!&ndash;    <td><a href="/update/{{data.id}}"><input type="button" value="pending"></a></td>&ndash;&gt;-->
+<!--    <td><a href="/approve/{{data.id}}"><input type="button" value="approve"></a></td>-->
+<!--      </tr>-->
+
+<!--<p>-->
+
+<!--    {% csrf_token %}-->
+<!--    {% for data in full_data %}-->
+<!--        {{data.id}}-->
+<!--        {{data.username}}-->
+<!--        {{data.mail}}-->
+<!--        {{data.password}}-->
+<!--        {{data.document}}-->
+<!--        {{data.image}}-->
+<!--    {% endfor %}-->

@@ -1,0 +1,137 @@
+<!--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+<!DOCTYPE html>
+{% extends 'client/client_home.html' %}
+{% block content %}
+{% load static %}
+<html>
+<head>
+<title>Dragging register form a Flat Responsive Widget Template :: w3layouts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Dragging register form Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+<!-- custom css file -->
+<link rel="stylesheet" href="{% static 'client_details/css/style.css '%}">
+<!-- //custom css file -->
+
+<!-- google fonts -->
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300italic,300,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<!-- //google fonts -->
+	<style>
+    input[type="text"], input[type="email"], input[type="number"], select, input[type="password"], select.dropdown, input#datepicker, input#datepicker1, input#datepicker2, textarea#message {
+		width: 96%;
+		padding: 0em 1em .4em 0;
+		border: none;
+		border-bottom: 1px solid #999;
+		font-size: .9em;
+		letter-spacing:.5px;
+		outline: none;
+		color: #000;
+		background-color: transparent;
+		margin-bottom: 1.2em;
+		font-family: 'Montserrat', sans-serif;
+    }
+	</style>
+</head>
+
+<body>
+<script>
+{% for msg in messages %}
+
+	 alert('{{ msg }}');
+{% endfor %}
+
+</script>
+
+<div class="agile-its">
+	<h2>ENTER YOUR PROJECT DETAILS</h2>
+	<form action="/client_project_details/" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+
+	<div class="w3layouts">
+
+						<div class="agileinfo-row">
+							<div class="ferry ferry-from">
+								<label>ORGANISATION NAME</label>
+								<input type="text" name="organisation_name"  autocomplete="off">
+							</div>
+							<div class="ferry ferry-from">
+								<label>ORGANISATION ADDRESS</label>
+								<input type="text" name="organisation_address"  autocomplete="off">
+							</div>
+							<div class="ferry ferry-from">
+								<label>ORGANISATION EMAIL</label>
+								<input type="text" name="organisation_Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"  autocomplete="off">
+							</div>
+							<div class="ferry ferry-from">
+								<label>PHONE NUMBER</label>
+								<input type="text" name="phonenumber"   pattern="[6789][0-9]{9,}"  autocomplete="off" maxlength="10"/>
+							</div>
+							<label>SERVICES</label>
+							<div class="form_box">
+							   <div class="select-block1">
+								<select required="" name="services">
+									<option>select</option>
+									<option>CLOUD COMPUTING</option>
+									<option>FRONT END</option>
+									<option>BACKEND</option>
+									<option>TESTING</option>
+								</select>
+							</div>
+
+							<div class="ferry ferry-from">
+								<label> PROJECT ENQUIRY </label>
+								<input type="text" name="p_enquiry"  autocomplete="off">
+
+							</div>
+							<div class="clear"></div>
+						</div>
+		<div class="photos-upload-view">
+			<form id="upload" action="/client_project_details/" method="POST" enctype="multipart/form-data">
+				<input type="hidden"  name="p_document" value="300000" />
+					<div class="agileinfo">
+					<!-- <input type="submit" class="choose" value="Browse File...">
+					<h3>OR</h3> -->
+						<input type="file" name="p_document" multiple="multiple" />
+						<div id="filedrag">PROJECT DOCUMENTS</div>
+							<div id="messages">
+								<h4>UPLOAD PROJECT DOCUMENT FILE ABOVE</h4>
+
+							</div>
+					</div>
+					<div class="wthree-text">
+<!--						<label class="anim">-->
+<!--							<input type="checkbox" class="checkbox" required="">-->
+<!--							<span>Send me latest updates</span> -->
+<!--						</label>-->
+						<div class="wthreesubmitaits">
+							<input type="submit" name="submit" value="Register">
+						</div>
+						<div class="clear"> </div>
+					</div>
+			</form>
+
+		</div>
+
+	</div>
+	<form>
+</div>
+<div class="footer">
+	<p> © 2017 Dragging Register Form. All Rights Reserved | Design by  <a href="http://w3layouts.com/"> W3layouts</a></p>
+</div>
+
+<!-- js files -->
+<script src="{% static 'client_details/js/filedrag.js '%}"></script>
+<script type="text/javascript" src="{% static 'client_details/js/jquery.min.js '%}"></script>
+<!-- //js files -->
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,109 @@
+{% extends 'manager/manager_index.html' %}
+{% load static %}
+{% block content %}
+
+<script>
+    {% for msg in messages %}
+
+        alert('{{ msg }}');
+    {% endfor %}
+
+</script>
+<style>
+table, th, td {
+  border:2px solid BLACK;
+
+  font-color:black;
+}
+
+th{
+ background-color:#5f9ea0;
+ color:white;
+
+}
+td{
+color:white;
+}
+
+h1{color:blue}
+</style>
+
+
+
+<div style="margin-left:0px" class="slider-info text-center">
+<center><form  enctype="multipart/form-data">
+
+            {% if datas %}
+<h1 style="font-size:20px; color:black; ">CUSTOMER DETAILS</h1><br>
+    <table style="width:80%">
+  <tr>
+    <th>ID</th>
+    <th>FULL NAME</th>
+    <th>EMAIL</th>
+      <th>CONTACT</th>
+      <th>ORGANISATION</th>
+      <th>GENDER</th>
+      <th>DOB</th>
+      <th>FILES</th>
+      <th>ACTIONS</th>
+
+  </tr>
+
+        {% else %}
+<!--        <div><h3 style="color:white">All user are approved by admin</h3></div>-->
+        {% endif %}
+         {% for data in datas %}
+
+         <td>{{data.id}}</td>
+            <td >{{data.fullname}}</td>
+            <td >{{data.email}}</td>
+            <td >{{data.contact}}</td>
+            <td> {{data.organisation}}</td>
+            <td> {{data.gender}}</td>
+            <td> {{data.dob}}</td>
+            <td> {{data.files.url}}</td>
+            <td><center><a href="#"><input style="background-color:black; color:white;" type="submit" value="next"></a></center></td>
+
+
+
+
+
+
+
+
+<!--<a href="/approve_merchant/{{data.id}}"><input type="button" value="approve"></a>-->
+<!--    <td>{{data.password}}</td>-->
+<!--    <td>{{data.document}}</td>-->
+<!--    <td>{{data.image}}</td>-->
+<!--    {% if data.document %}-->
+<!--    <td><a href="{{data.document.url}}"><button>File</button></a></td>-->
+<!--    {% else %}-->
+<!--      <td>-</td>-->
+<!--    {% endif %}-->
+<!--&lt;!&ndash;    <td><img src="{{i.image.url}}" alt="{{i.image}}" width="80" height="100"></td>&ndash;&gt;-->
+<!--    {% if data.image %}-->
+<!--    <td><img src="{{data.image.url}}" alt="{{data.image}}" width="80" height="100"></td>-->
+<!--    {% else %}-->
+<!--      <td>-</td>-->
+<!--    {% endif %}-->
+<!--&lt;!&ndash;    <td><a href="/update/{{data.id}}"><input type="button" value="pending"></a></td>&ndash;&gt;-->
+<!--    <td><a href="/approve/{{data.id}}"><input type="button" value="approve"></a></td>-->
+<!--      </tr>-->
+      {% endfor %}
+</table>
+<!--<p>-->
+
+<!--    {% csrf_token %}-->
+<!--    {% for data in full_data %}-->
+<!--        {{data.id}}-->
+<!--        {{data.username}}-->
+<!--        {{data.mail}}-->
+<!--        {{data.password}}-->
+<!--        {{data.document}}-->
+<!--        {{data.image}}-->
+<!--    {% endfor %}-->
+
+<!--</p>-->
+</form></center>
+</div>
+{% endblock %}

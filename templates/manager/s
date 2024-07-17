@@ -1,0 +1,38 @@
+<center><form method="post"  enctype="multipart/form-data">
+	{% csrf_token %}
+
+            {% if datas %}
+<h1 style="font-size:20px; color:white; ">CUSTOMER PROJECT DETAILS</h1><br>
+    <table style="width:80%">
+  <tr>
+      <th>ID</th>
+    <th>organisation_name</th>
+    <th>organisation_address</th>
+      <th>phonenumber</th>
+      <th>services</th>
+      <th>contactu</th>
+      <th>p_enquiry</th>
+      <th>p_document</th>
+      <th>ACTIONS</th>
+
+
+  </tr>
+
+        {% else %}
+<!--        <div><h3 style="color:white">All user are approved by admin</h3></div>-->
+        {% endif %}
+         {% for data in datas %}
+<tr>
+
+         <td>{{data.id}}</td>
+            <td >{{data.organisation_name}}</td>
+            <td >{{data.organisation_address}}</td>
+            <td >{{data.phonenumber}}</td>
+            <td> {{data.services}}</td>
+            <td> {{data.contactu}}</td>
+			<td> {{data.p_enquiry}}</td>
+            <td> {{data.p_document}}</td>
+	        <td><a href="/send_client/{{data.id}}"><input type="button" value="approval"></a></td>
+			<td><a href="/send_client/{{data.id}}"><input type="button" value="reject"></a></td>
+<!--			<td><a href="/send_client/{{data.id}}"><button class="btn btn-info">APPROVAL</button></a></td>-->
+</tr>
